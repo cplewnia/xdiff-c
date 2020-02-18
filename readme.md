@@ -4,7 +4,7 @@ Version 0.9.6 (plus some fixes to build and run it in newer environments)
 
 ## What is it?
 
-X-Diff is a tool for detecting difference between two XML documents.
+X-Diff is a tool for detecting differences between two XML documents.
 
 ## Documentation
 
