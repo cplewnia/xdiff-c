@@ -1,4 +1,4 @@
-# X-Diff V
+# X-Diff
 
 Version 0.9.6 (plus some fixes to build and run it in newer environments)
 
