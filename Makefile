@@ -47,18 +47,14 @@
 XERCESROOT = /usr/local
 
 CC = g++
-CFLAGS = -DDEBUG -DLINUX -D_REENTRANT -g -fpic -Wall
+CFLAGS = -DDEBUG -DLINUX -D_REENTRANT -g -fpic -Wall -std=c++11 -Wno-deprecated
 LFLAGS = -DLINUX -fpic
 
 INCLUDES = -I${XERCESROOT}/include
 LIBS = -L${XERCESROOT}/lib
 LINKS = -lxerces-c -lc
 
-SOURCES =	XTree.cpp	\
-		XHash.cpp	\
-		XLut.cpp	\
-		XParser.cpp	\
-		XDiff.cpp
+SOURCES = XTree.cpp XHash.cpp XLut.cpp XParser.cpp XDiff.cpp
 
 HEADERS = $(SOURCES:.cpp=.hpp)
 OBJECTS = $(SOURCES:.cpp=.o)
@@ -69,7 +65,7 @@ OBJECTS = $(SOURCES:.cpp=.o)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $<
 
 xdiff:	$(OBJECTS)
-	$(CC) $(LFLAGS) $(LIBS) -o ${.TARGET} $(OBJECTS) $(LINKS) 
+	$(CC) $(LFLAGS) $(LIBS) -o xdiff $(OBJECTS) $(LINKS) 
 
 clean:
 	rm -rf *.o core xdiff
